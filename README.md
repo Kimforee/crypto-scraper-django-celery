@@ -1,4 +1,4 @@
-# crypto_scraper-django-celery
+# crypto-scraper-django-celery
 
 Crypto Scraper is a Django-based application designed to scrape cryptocurrency data from CoinMarketCap. It utilizes Celery for task management and Redis as a message broker to handle asynchronous tasks.
 
