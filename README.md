@@ -61,7 +61,7 @@ Crypto Scraper is a Django-based application designed to scrape cryptocurrency d
 7. **Start the Celery worker**
 
     ```bash
-    celery -A crypto_scraper worker --loglevel=info
+    python -m celery -A celery_project worker -l info -P solo
     ```
 
 ## Configuration
@@ -78,13 +78,13 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 ```
 
-###Usage
+## Usage
 To start scraping cryptocurrency data, you need to make a POST request to the start_scraping endpoint with a list of coins.
 
 To create a job : 
 curl -X POST -H "Content-Type: application/json" -d '["bitcoin"]' http://127.0.0.1:8000/api/taskmanager/start_scraping
 
-Response:
+Expected Response:
 {
   "job_id": "cc65631c-6e1f-45f6-945e-61d9ea7d0c69"
 }
