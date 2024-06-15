@@ -88,3 +88,29 @@ Expected Response:
 {
   "job_id": "cc65631c-6e1f-45f6-945e-61d9ea7d0c69"
 }
+
+## API Endpoints
+### Start Scraping
+```Endpoint:
+ /api/taskmanager/start_scraping
+```
+Method: POST
+Description: Start scraping data for the given list of coins.
+Request:
+Content Type: application/json
+Body: ["coin1", "coin2", "coin3"]
+Response:
+job_id: string
+
+### Scraping Status
+```Endpoint:
+ /api/taskmanager/scraping_status/<job_id>
+```
+Method: GET
+Description: Check the status of the scraping job.
+
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request.
+
+## License
+This project is licensed under the MIT License.
