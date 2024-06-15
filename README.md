@@ -81,13 +81,19 @@ CELERY_RESULT_SERIALIZER = 'json'
 ## Usage
 To start scraping cryptocurrency data, you need to make a POST request to the start_scraping endpoint with a list of coins.
 
-To create a job : 
+```To create a job : bash 
 curl -X POST -H "Content-Type: application/json" -d '["bitcoin"]' http://127.0.0.1:8000/api/taskmanager/start_scraping
+```
 
 Expected Response:
 {
   "job_id": "cc65631c-6e1f-45f6-945e-61d9ea7d0c69"
 }
+
+```Check Status: bash
+curl http://127.0.0.1:8000/api/taskmanager/scraping_status/<your_job_id>
+```
+
 
 ## API Endpoints
 ### Start Scraping
